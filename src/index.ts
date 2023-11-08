@@ -2,8 +2,14 @@ import { MyDatabase } from './creational/singleton/my-database';
 
 console.log('Start! 🚀');
 
-const db1 = MyDatabase.getInstance();
+const db = MyDatabase.instance;
 
-const db2 = MyDatabase.getInstance();
+db.add({id: 137, name: 'Rick', age: 33});
+db.add({id: 213, name: 'Morty', age: 14});
+db.add({id: 255, name: 'Birdperson', age: 79});
+db.add({id: 76, name: 'Summer', age: 18});
 
-console.log('Are both db\'s equals? ', db1 === db2);
+
+db.remove(255);
+
+db.show();
